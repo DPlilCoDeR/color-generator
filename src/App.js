@@ -6,7 +6,7 @@ import Values from 'values.js'
 const {log} = console
 
 function App() {
-  const[color,setColor]=useState('');
+  const[color,setColor]=useState("#253315");
   const[error,setError] = useState(false);
   const[list,setList] = useState([]);
 
@@ -29,8 +29,7 @@ function App() {
           <input 
             className={`${error? 'error' : null}`} 
             type='text' 
-            value={color} 
-            placeholder="#253315" 
+            value={color}
             onChange={e => setColor(e.target.value)}
           />
           <button className='btn' type='submit'>Generate</button>
