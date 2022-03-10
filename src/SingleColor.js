@@ -4,6 +4,13 @@ import rgbToHex from './utils'
 const SingleColor = ({rgb, weight, index}) => {
   const [alert, setAlert] = useState(false);
 
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      setAlert(false);
+    }, 3000)
+    return () => clearTimeout(timeout);
+  }, [alert]);
+
   const bcg = rgb.join(",");
   const hex = rgbToHex(...rgb);
 
